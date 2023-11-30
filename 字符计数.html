@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const myString = "Hello,World!Baby.";
+
+        function searchX(n) {
+            if (n >= 0 && n < myString.length) {
+                var nth = myString.charAt(n);
+                return nth;
+            } else {
+                return null;
+            }
+        }
+
+        function countBs(myString) {
+            var count = 0;
+            for (let i = 0; i < myString.length; i++) {
+                let m = searchX(i);
+                if (m === 'B') {
+                    count++;
+                }
+            }
+            console.log(`B有${count}个`);
+        }
+
+        countBs(myString);
+
+        function countChar(myString,char)
+        {
+            var count = 0;
+            for (let i = 0; i < myString.length; i++) {
+                let m = searchX(i);
+                if (m === char) {
+                    count++;
+                }
+            }
+            console.log(`${char}有${count}个`);
+        }
+        countChar(myString,'W');
+    </script>
+</body>
+</html>

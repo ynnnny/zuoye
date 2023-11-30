@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function isEven(factor){
+            if(factor === 0)
+            {
+                return 0;
+            }
+            else if (factor === 1)
+            {
+                return 1;
+            }
+            else{
+                return isEven(factor - 2);
+            }
+        }
+
+        function panduan(factor){
+            if(isEven(factor))
+            {
+                console.log(`${factor}是奇数`);
+            }
+            else
+            {
+                console.log(`${factor}是偶数`);
+            }
+        }
+
+        panduan(50);
+        panduan(75);
+    </script>
+</body>
+</html>
