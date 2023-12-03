@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function arrayToList(array) {
+            let list = null;
+            for (let i = array.length - 1; i >= 0; i--) {
+                list = {
+                    value: array[i],
+                    rest: list
+                };
+            }
+            return list;
+        }
+
+        function listToArray(list)
+        {
+            let array = [];
+            while(list != null)
+            {
+                array.push(list.value);
+                list = list.rest;
+            }
+            return array;
+        }
+
+        function prepend(element,list){
+            return {
+                value: element, rest: list
+            }
+        }
+
+        function nth(list ,number){
+            if(!list){
+                return undefined;
+            }
+            if(number === 0)
+            {
+                return list.value;
+            }
+            return nth(list.rest , number - 1)
+        }
+
+        let array = [1,2,3,4,5];
+        let list = arrayToList(array);
+        console.log(list);
+
+        let array1 = listToArray(list);
+        console.log(array1);
+
+        let list1 = prepend(0, list);
+        console.log(list1);
+
+        let n = nth(list1, 4);
+        console.log(n);
+
+    </script>
+</body>
+</html>

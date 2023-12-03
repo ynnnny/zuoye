@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function range(a, b, n)
+        {
+            var numbers = [];
+            if(n > 0)
+            {
+                for (let i = a; i <= b; i += n) {
+                numbers.push(i);
+                }
+            }
+            else
+            {
+                for (let i = a; i >= b; i += n) {
+                numbers.push(i);
+                }
+            }
+            return numbers;
+        }
+
+
+        function sum(numbers)
+        {
+            var sum = 0;
+            for(let entry of numbers)
+            {
+                sum += entry;
+            }
+            return sum;
+        }
+
+        var numbers = range(5,1,-1)
+        console.log(sum(numbers));
+    </script>
+</body>
+</html>

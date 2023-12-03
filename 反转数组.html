@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let array = [1,2,3,4,5]
+        function reverseArray(array){
+            let rarray = [];
+            for(let i = 0; i < array.length; i++)
+            {
+                rarray[i] = array[array.length - 1 - i];
+            }
+            console.log(rarray);
+        }
+
+        function reverseArrayInPlace(array){
+            for(let i = 0; i < array.length / 2; i++)
+            {
+                let t = array[i];
+                array[i] = array[array.length - 1 - i];
+                array[array.length - 1 - i] = t;
+            }
+            console.log(array);
+        }
+
+        reverseArray(array.slice());
+        reverseArrayInPlace(array.slice());
+    </script>
+</body>
+</html>
