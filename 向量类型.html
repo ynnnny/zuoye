@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class vec{
+            constructor(x,y){
+                this._x = x;
+                this._y = y;
+            }
+
+            plus(otherVec){
+                return new vec(this._x + otherVec._x , this._y + otherVec._y);
+            }
+
+            minus(otherVec){
+                return new vec(this._x - otherVec._x, this._y - otherVec._y);
+            }
+        }
+
+        const vector1 = new vec(1,2);
+        const vector2 = new vec(3,4);
+
+        console.log(vector1.plus(vector2));
+        console.log(vector1.minus(vector2));
+    </script>
+</body>
+</html>

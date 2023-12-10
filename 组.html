@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Group{
+            constructor(){
+                this.members = []
+            }
+
+            add(value){
+                if(!this.has(value)){
+                    this.members.push(value);
+                }
+            }
+
+            delete(value){
+                const index = this.members.indexOf(value);
+                if(index !== -1){
+                    this.members.splice(index,1);
+                }
+            }
+
+            has(value){
+                return this.members.indexOf(value) !== -1;
+            }
+
+            static from(iterable){
+                const group = new Group();
+                for(const value of iterable){
+                    group.add(value);
+                }
+                return group;
+            }
+        }
+
+        const myGroup = Group.from(['apple','banana','orange']);
+
+        console.log(myGroup.has('apple'));
+        console.log(myGroup.has('peach'));
+
+        myGroup.delete('banana');
+        console.log(myGroup.has('banana'));
+
+    </script>
+</body>
+</html>
