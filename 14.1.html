@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table id="mountains">
+        <tr>
+            <th>Name</th>
+            <th>Height</th>
+            <th>Place</th>
+        </tr>
+    </table>
+
+    <script>
+        const MOUNTAINS =[
+            {name: "珠穆朗玛峰", height: 8848, place: "中国"},
+            {name: "富士山", height: 3776, place: "日本"},
+            {name: "乞力马扎罗山", height: 5895, place: "坦桑尼亚"}
+    ];
+        const mountainsTable = document.getElementById("mountains");
+        MOUNTAINS.forEach(mountain =>{
+            const row = document.createElement('tr');
+            const nameCell = document.createElement('td');
+            nameCell.textContent = mountain.name;
+            const heightCell = document.createElement('td');
+            heightCell.textContent = mountain.height;
+            heightCell.style.textAlign = 'right';
+            const placeCell = document.createElement('td');
+            placeCell.textContent = mountain.place;
+
+
+            row.appendChild(nameCell);
+            row.appendChild(heightCell);
+            row.appendChild(placeCell);
+
+            mountainsTable.appendChild(row);
+        })
+    </script>
+</body>
+</html>
